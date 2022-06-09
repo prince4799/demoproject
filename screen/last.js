@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,Text,StyleSheet,CameraRollAssetType} from 'react-native';
 
 export default function Last()
 {
@@ -15,7 +15,7 @@ const styles=StyleSheet.create(
     {
       container:{
             flex:1,
-            backgroundColor:"rgb(250, 162, 90)",
+            backgroundColor:"#054459",
         }
     }
 )

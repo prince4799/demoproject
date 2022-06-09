@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 
+
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -86,6 +87,13 @@ project.ext.react = [
 // ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+// apply from: "../../node_modules/@react-native-community/cameraroll"
+// C:\Users\PRINCE\Desktop\ReactNativeProject\saksham2\node_modules\@react-native-community\cameraroll
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -276,6 +284,7 @@ dependencies {
         exclude group:'com.facebook.fbjni'
     }
 
+
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
         exclude group:'com.squareup.okhttp3', module:'okhttp'
@@ -284,6 +293,7 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
+      
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
