@@ -5,7 +5,9 @@ import {
     StyleSheet,
     FlatList,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    TextInput,
+    Dimensions
 } from 'react-native';
 
 import { images } from '../../util/imgSrc';
@@ -58,9 +60,7 @@ export default class Home extends Component {
         setInterval(() => { this.setState({ date: new Date().toLocaleString() }) }, 1000)
     }
 
-    // abc(user) {
-    //     console.log(tag, user);
-    // }
+
 
     render() {
         var user = {
@@ -69,6 +69,19 @@ export default class Home extends Component {
         }
         return (
             <View style={{ flex: 1 }}>
+                <View style={{alignItems: "center",flexDirection:'row'}}>
+                    <TextInput style={{
+                        borderWidth:2.5,
+                        width:Dimensions.get('window').width-55,
+                        borderRadius:30,
+                        borderColor:"grey",
+                        }}
+                        placeholder={"      Search here"}
+                        placeholderTextColor={"gray"} />
+                        <TouchableOpacity style={{alignItems: "center"}}>
+                            <Image style={{height:55, width: 55,borderRadius:27}} source={{uri:"https://www.computerhope.com/jargon/s/search-icon.gif"}} />
+                        </TouchableOpacity>
+                </View>
                 <FlatList
                     style={{ marginTop: 10, }}
                     horizontal
