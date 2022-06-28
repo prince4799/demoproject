@@ -8,11 +8,7 @@ import {
   SafeAreaView
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '../screen/classScreens/classhome'
-// import Home from '../screen/home'
-import Profile from '../screen/classScreens/classprofile'
-import Last from '../screen/classScreens/last'
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import AppStack from './stacks'
 
 const Tab = createBottomTabNavigator();
 
@@ -21,10 +17,11 @@ const Tab = createBottomTabNavigator();
 export default function MyTabs() {
   console.clear();
   return (
-    <Tab.Navigator tabBar={props => <CustomTab {...props} />}>
-      <Tab.Screen name="Home" component={Home}options={{ headerShown: false }}/>
-      <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-      <Tab.Screen name="Last" component={Last} />
+    <Tab.Navigator tabBar={props => <CustomTab {...props} />}
+    screenOptions={{
+      headerShown: false,
+    }}>
+      <Tab.Screen name="AppStack" component={AppStack}/>
     </Tab.Navigator>
   );
 }

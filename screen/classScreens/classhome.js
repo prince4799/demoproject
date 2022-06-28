@@ -10,8 +10,10 @@ import {
     Dimensions
 } from 'react-native';
 
+
 import { images } from '../../util/imgSrc';
 import Profile from './classprofile';
+import ToggleDrawer from '../classScreens/toggleDrawer';
 
 const tag = 'Home';
 export default class Home extends Component {
@@ -70,11 +72,13 @@ export default class Home extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <View style={{alignItems: "center",flexDirection:'row'}}>
+                    <ToggleDrawer/>
                     <TextInput style={{
                         borderWidth:2.5,
-                        width:Dimensions.get('window').width-55,
+                        width:Dimensions.get('window').width-85,
                         borderRadius:30,
                         borderColor:"grey",
+                        // margin:10,
                         }}
                         placeholder={"      Search here"}
                         placeholderTextColor={"gray"} />

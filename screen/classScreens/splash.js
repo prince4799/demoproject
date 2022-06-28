@@ -9,13 +9,9 @@ export default class Splash extends React.Component {
     componentDidMount() {
         this.check()
     }
-    check = async () => {
-        console.log("running fromsplash")
-        var res = await AsyncStorage.getAllKeys()
-        if (res)
+    check = () => {
+        
             this.props.navigation.navigate(Home)
-        else
-            this.props.navigation.navigate(Login)
     }
     render() {
         return (
